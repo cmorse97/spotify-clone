@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import MusicPlayer from './components/MusicPlayer';
 import './App.scss';
 

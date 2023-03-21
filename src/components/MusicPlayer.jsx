@@ -17,7 +17,7 @@ const MusicPlayer = () => {
 	};
 
 	return (
-		<div onClick={handleToggle} className={isPageActive}>
+		<div className={isPageActive}>
 			<Header handleToggle={handleToggle} />
 			<AlubmArt />
 			<TitleBar />
