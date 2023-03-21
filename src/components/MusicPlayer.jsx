@@ -14,8 +14,6 @@ const MusicPlayer = () => {
 		isPageActive === 'minimized'
 			? setIsPageActive('')
 			: setIsPageActive('minimized');
-
-		console.log(isPageActive);
 	};
 
 	return (

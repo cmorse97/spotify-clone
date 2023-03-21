@@ -1,7 +1,9 @@
-import React from 'react';
-
-const PlaylistTitle = () => {
-	return <div>PlaylistTitle</div>;
+const PlaylistTitle = ({ handleToggle }) => {
+	return (
+		<div className='playlist-title' onClick={handleToggle}>
+			Playlist Title
+		</div>
+	);
 };
 
 export default PlaylistTitle;

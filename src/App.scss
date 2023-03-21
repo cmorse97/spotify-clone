@@ -12,16 +12,39 @@
 .header {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.ellipsis-icon {
+	cursor: pointer;
+}
+
+.dropdown-icon {
+	cursor: pointer;
+}
+
+.playlist-title {
+	cursor: pointer;
+}
+
+.album-art {
+	margin-bottom: 2rem;
 }
 
 .title-bar {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.slider {
+	margin-bottom: 2rem;
 }
 
 .playback-options {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 2rem;
 }
 
 .footer {
