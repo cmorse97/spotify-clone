@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-import { Slider } from '@mui/material';
+import { Slider, Box, Typography } from '@mui/material';
+
+const TinyText = styled(Typography)({
+	fontSize: '0.75rem',
+	opacity: 0.38,
+	fontWeight: 500,
+	letterSpacing: 0.2,
+});
 
 const SongSlider = () => {
 	const theme = useTheme();
@@ -24,11 +31,11 @@ const SongSlider = () => {
 				max={duration}
 				onChange={(_, value) => setPosition(value)}
 				sx={{
-					color: theme.palette.mode === 'light' ? '#fff' : 'rgba(0,0,0,0.87)',
+					color: '#fff',
 					height: 4,
 					'& .MuiSlider-thumb': {
-						width: 8,
-						height: 8,
+						width: 12,
+						height: 12,
 						transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
 						'&:before': {
 							boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
@@ -50,6 +57,17 @@ const SongSlider = () => {
 					},
 				}}
 			/>
+			<Box
+				sx={{
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'space-between',
+					mt: -2,
+				}}
+			>
+				<TinyText>{formatDuration(position)}</TinyText>
+				<TinyText>-{formatDuration(duration - position)}</TinyText>
+			</Box>
 		</div>
 	);
 };

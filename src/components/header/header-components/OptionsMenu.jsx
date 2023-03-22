@@ -27,14 +27,17 @@ const OptionsMenu = () => {
 			/>
 			<Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
 				<MenuItem onClick={handleClose}>
-					<FontAwesomeIcon icon={faPlus} sx={{ m: 0.5 }} />
+					<FontAwesomeIcon icon={faPlus} />
 					Add to playlist
+					{/* Todo: Add function to add song to playlist */}
 				</MenuItem>
 				<MenuItem onClick={handleClose}>
 					<FontAwesomeIcon icon={faBars} /> Add to queue
+					{/* Todo: Add function to add song to queue */}
 				</MenuItem>
 				<MenuItem onClick={handleClose}>
 					<FontAwesomeIcon icon={faArrowUpFromBracket} /> Share
+					{/* Todo: Add function to share song */}
 				</MenuItem>
 			</Menu>
 		</div>

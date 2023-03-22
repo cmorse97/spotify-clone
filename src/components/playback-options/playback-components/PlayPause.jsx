@@ -1,13 +1,17 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay, faCirclePause } from '@fortawesome/free-solid-svg-icons';
 
 const PlayPause = () => {
+	const [isPaused, setIsPaused] = useState(false);
+
 	return (
 		<div>
 			<FontAwesomeIcon
-				fontSize='large'
-				icon={faCirclePlay}
-				// Todo: add function to change play to pause on click
+				onClick={() => setIsPaused(!isPaused)}
+				className='play-pause-icon'
+				fontSize={48}
+				icon={!isPaused ? faCirclePlay : faCirclePause}
 			/>
 		</div>
 	);

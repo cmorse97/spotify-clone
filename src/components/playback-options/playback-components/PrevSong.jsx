@@ -4,7 +4,11 @@ import { faBackwardStep } from '@fortawesome/free-solid-svg-icons';
 const PrevSong = () => {
 	return (
 		<div>
-			<FontAwesomeIcon icon={faBackwardStep} className='prevBtn' />
+			<FontAwesomeIcon
+				icon={faBackwardStep}
+				fontSize={24}
+				className='prevBtn'
+			/>
 		</div>
 	);
 };
