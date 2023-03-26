@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { styled, useTheme } from '@mui/material/styles';
-import { Slider, Box, Typography } from '@mui/material';
+
+import styled from '@emotion/styled';
+import { Box, Slider, Typography } from '@mui/material';
 
 const TinyText = styled(Typography)({
 	fontSize: '0.75rem',
@@ -10,10 +11,8 @@ const TinyText = styled(Typography)({
 });
 
 const SongSlider = () => {
-	const theme = useTheme();
-	const duration = 200; // seconds
+	const duration = 200;
 	const [position, setPosition] = useState(32);
-	const [paused, setPaused] = useState(false);
 	const formatDuration = (value) => {
 		const minute = Math.floor(value / 60);
 		const secondLeft = value - minute * 60;
@@ -23,7 +22,6 @@ const SongSlider = () => {
 	return (
 		<div className='slider'>
 			<Slider
-				aria-label='time-indicator'
 				size='small'
 				value={position}
 				min={0}
@@ -41,11 +39,7 @@ const SongSlider = () => {
 							boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
 						},
 						'&:hover, &.Mui-focusVisible': {
-							boxShadow: `0px 0px 0px 8px ${
-								theme.palette.mode === 'light'
-									? 'rgb(255 255 255 / 16%)'
-									: 'rgb(0 0 0 / 16%)'
-							}`,
+							boxShadow: `0px 0px 0px 8px ${'rgba(0,0,0,0.4)'}`,
 						},
 						'&.Mui-active': {
 							width: 20,

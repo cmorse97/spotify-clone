@@ -1,10 +1,14 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from 'gestalt';
 
 const DeviceOptions = () => {
 	return (
 		<div className='device-options'>
-			<FontAwesomeIcon icon={faHeadphonesSimple} className='deviceBtn' />
+			<IconButton
+				icon='mobile'
+				iconColor='white'
+				bgColor='transparent'
+				size='md'
+			/>
 		</div>
 	);
 };

@@ -1,10 +1,14 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faForwardStep } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from 'gestalt';
 
 const NextSong = () => {
 	return (
 		<div>
-			<FontAwesomeIcon icon={faForwardStep} fontSize={24} className='nextBtn' />
+			<IconButton
+				icon='arrow-end'
+				iconColor='white'
+				bgColor='transparent'
+				size='md'
+			/>
 		</div>
 	);
 };

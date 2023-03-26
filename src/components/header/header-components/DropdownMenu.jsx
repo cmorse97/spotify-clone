@@ -1,12 +1,13 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from 'gestalt';
 
 function DropdownMenu({ handleToggle }) {
 	return (
 		<div>
-			<FontAwesomeIcon
+			<IconButton
 				className='dropdown-icon'
-				icon={faAngleDown}
+				bgColor='transparent'
+				icon='arrow-down'
+				iconColor='white'
 				onClick={handleToggle}
 			/>
 		</div>

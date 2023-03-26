@@ -1,10 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from 'gestalt';
 
 const AddToFavorites = () => {
 	return (
 		<div>
-			<FontAwesomeIcon icon={faPlus} className='addBtn' />
+			<IconButton icon='add' bgColor='transparent' iconColor='white' />
 		</div>
 	);
 };

@@ -1,10 +1,14 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from 'gestalt';
 
 const QueueMenu = () => {
 	return (
 		<div className='queue-menu'>
-			<FontAwesomeIcon icon={faBars} className='queueBtn' />
+			<IconButton
+				icon='menu'
+				iconColor='white'
+				bgColor='transparent'
+				size='md'
+			/>
 		</div>
 	);
 };

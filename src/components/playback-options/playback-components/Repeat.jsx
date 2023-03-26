@@ -1,10 +1,14 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRepeat } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from 'gestalt';
 
 const Repeat = () => {
 	return (
 		<div className='repeat-option'>
-			<FontAwesomeIcon icon={faRepeat} className='repeatBtn' />
+			<IconButton
+				icon='refresh'
+				iconColor='white'
+				bgColor='transparent'
+				size='sm'
+			/>
 		</div>
 	);
 };

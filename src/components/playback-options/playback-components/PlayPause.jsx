@@ -1,17 +1,18 @@
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay, faCirclePause } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from 'gestalt';
 
 const PlayPause = () => {
 	const [isPaused, setIsPaused] = useState(false);
 
 	return (
 		<div>
-			<FontAwesomeIcon
+			<IconButton
 				onClick={() => setIsPaused(!isPaused)}
 				className='play-pause-icon'
-				fontSize={48}
-				icon={!isPaused ? faCirclePlay : faCirclePause}
+				iconColor='white'
+				bgColor='transparent'
+				icon={!isPaused ? 'play' : 'pause'}
+				size='xl'
 			/>
 		</div>
 	);

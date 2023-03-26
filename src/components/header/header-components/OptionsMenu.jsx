@@ -1,45 +1,53 @@
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faEllipsis,
-	faPlus,
-	faBars,
-	faArrowUpFromBracket,
-} from '@fortawesome/free-solid-svg-icons';
-import { Menu, MenuItem } from '@mui/material';
+import { useState, useRef } from 'react';
+
+import { Dropdown, IconButton } from 'gestalt';
 
 const OptionsMenu = () => {
-	const [anchorEl, setAnchorEl] = useState(null);
-	const open = Boolean(anchorEl);
-	const handleClick = (e) => {
-		setAnchorEl(e.currentTarget);
-	};
-	const handleClose = () => {
-		setAnchorEl(null);
+	const [open, setOpen] = useState(false);
+	const [selected, setSelected] = useState(null);
+	const anchorRef = useRef(null);
+
+	const onSelect = ({ item }) => {
+		if (selected.some(({ value }) => value === item.value)) {
+			setSelected((selectedValue) =>
+				selectedValue.filter(({ value }) => value !== item.value)
+			);
+		} else {
+			setSelected((selectedValue) => [...selectedValue, item]);
+		}
 	};
 
 	return (
 		<div>
-			<FontAwesomeIcon
+			<IconButton
+				accessibilityLabel='options menu'
+				bgColor='transparent'
 				className='ellipsis-icon'
-				icon={faEllipsis}
-				onClick={handleClick}
-			/>
-			<Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-				<MenuItem onClick={handleClose}>
-					<FontAwesomeIcon icon={faPlus} />
-					Add to playlist
-					{/* Todo: Add function to add song to playlist */}
-				</MenuItem>
-				<MenuItem onClick={handleClose}>
-					<FontAwesomeIcon icon={faBars} /> Add to queue
-					{/* Todo: Add function to add song to queue */}
-				</MenuItem>
-				<MenuItem onClick={handleClose}>
-					<FontAwesomeIcon icon={faArrowUpFromBracket} /> Share
-					{/* Todo: Add function to share song */}
-				</MenuItem>
-			</Menu>
+				icon='ellipsis'
+				iconColor='white'
+				onClick={() => setOpen((prevVal) => !prevVal)}
+				ref={anchorRef}
+				selected={open}
+			>
+				{open && (
+					<Dropdown
+						anchor={anchorRef.current}
+						id='dropdown'
+						onDismiss={() => setOpen(false)}
+					>
+						<Dropdown.Section label='Options'>
+							<Dropdown.Item
+								onSelect={onSelect}
+								option={{
+									value: 'Add to favorites',
+									label: 'Add to favorites',
+								}}
+								selected={selected}
+							/>
+						</Dropdown.Section>
+					</Dropdown>
+				)}
+			</IconButton>
 		</div>
 	);
 };

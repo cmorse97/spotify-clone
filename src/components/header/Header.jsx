@@ -1,14 +1,21 @@
 import DropdownMenu from './header-components/DropdownMenu';
 import OptionsMenu from './header-components/OptionsMenu';
-import PlaylistTitle from './header-components/PlaylistTitle';
+import SearchBar from './header-components/SearchBar';
+
+import { Box } from 'gestalt';
 
 function Header({ handleToggle }) {
 	return (
-		<div className='header'>
+		<Box
+			display='flex'
+			alignItems='center'
+			justifyContent='between'
+			marginBottom={8}
+		>
 			<DropdownMenu handleToggle={handleToggle} />
-			<PlaylistTitle />
+			<SearchBar />
 			<OptionsMenu />
-		</div>
+		</Box>
 	);
 }
 

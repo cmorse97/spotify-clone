@@ -1,10 +1,14 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from 'gestalt';
 
 const ShareOptions = () => {
 	return (
 		<div className='share-options'>
-			<FontAwesomeIcon icon={faArrowUpFromBracket} className='shareBtn' />
+			<IconButton
+				icon='share'
+				iconColor='white'
+				bgColor='transparent'
+				size='md'
+			/>
 		</div>
 	);
 };
